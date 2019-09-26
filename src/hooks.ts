@@ -1,5 +1,9 @@
-import { shallowEqual, useDispatch as useReduxDispatch, useSelector } from "react-redux"
-import { Action } from "./actions"
+import {
+  shallowEqual,
+  useDispatch as useReduxDispatch,
+  useSelector,
+} from 'react-redux'
+import { Action } from './actions'
 
 /** Custom Hook that lets React components consume app state */
 export function useAppState<S, T>(selector: (state: S) => T): T {

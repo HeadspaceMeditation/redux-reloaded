@@ -1,5 +1,5 @@
-import { Dispatch, MiddlewareAPI } from "redux"
-import { Action, ActionCreator } from "./actions"
+import { Dispatch, MiddlewareAPI } from 'redux'
+import { Action, ActionCreator } from './actions'
 
 /** A function that responds to a Redux action
  *  It might be sync or async, and may or may not

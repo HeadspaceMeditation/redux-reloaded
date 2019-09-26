@@ -1,5 +1,5 @@
-import { Dispatch, Middleware } from "redux"
-import { ActionHandlers, ActionHandlerSet } from "./actionHandlers"
+import { Dispatch, Middleware } from 'redux'
+import { ActionHandlers, ActionHandlerSet } from './actionHandlers'
 
 /** Redux Middleware that allows you to dispatch an async action */
 export const createActionHandlerMiddleware: <C, S>(
