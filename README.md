@@ -1,5 +1,9 @@
 # Redux Reloaded
 
+![advertisement](https://raw.githubusercontent.com/ginger-io/redux-reloaded/master/advertisement.jpg)
+
+## What's this?
+
 Typesafe Redux, without all the boilerplate...and more.
 
 ## Features
