@@ -13,7 +13,7 @@ const selectAction = createAction(Actions.SELECT, (id: string) => ({ id }))
 it('should respond to an action', () => {
   const reducer = createReducer<State>({ selectedId: null })
 
-  reducer.on(selectAction, (state, { payload }) => {
+  reducer.on(selectAction, (_, { payload }) => {
     return {
       selectedId: payload.id,
     }
