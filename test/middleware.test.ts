@@ -19,6 +19,13 @@ describe('redux middleware', () => {
     firstName
   })
 
+  it("should not blow up if an action does not have a handler registered", () => {
+    const handlers = createActionHandlers()
+    const store = createStore(handlers)
+    const action = submitForm('foo')
+    expect(() => store.dispatch(action)).not.toThrow()
+  })
+
   it('should call a non-async handler', () => {
     const calls: Action<any>[] = []
     const handlers = createActionHandlers()

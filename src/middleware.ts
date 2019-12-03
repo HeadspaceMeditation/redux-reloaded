@@ -9,9 +9,12 @@ export const createActionHandlerMiddleware: <C, S>(
   const allHandlers = mergeActionHandlers(handlers)
   return redux => next => action => {
     const nextState = next(action)
-    allHandlers[action.type].forEach(handler =>
-      handler({ context, redux, action })
-    )
+    const handlers = allHandlers[action.type]
+
+    if (handlers !== undefined) {
+      handlers.forEach(handler => handler({ context, redux, action }))
+    }
+
     return nextState
   }
 }
