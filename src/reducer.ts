@@ -12,7 +12,7 @@ class Reducer<S> {
   }
 
   on = <P>(
-    actionCreator: ActionCreator<P>,
+    actionCreator: ActionCreator<any, P>,
     updateState: (state: S, action: Action<P>) => S
   ): this => {
     this.handlers[actionCreator.type] = updateState

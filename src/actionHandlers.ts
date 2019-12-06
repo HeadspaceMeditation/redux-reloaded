@@ -21,7 +21,7 @@ export class ActionHandlers<C, S> {
   } = {}
 
   on = <P>(
-    actionCreator: ActionCreator<P>,
+    actionCreator: ActionCreator<any, P>,
     handler: ActionHandler<C, S, P>
   ): this => {
     this.handlers[actionCreator.type] = handler
