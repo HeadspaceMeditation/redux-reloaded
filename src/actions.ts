@@ -17,14 +17,15 @@ export interface NoPayloadActionCreator {
   readonly type: ActionType
 }
 
-
 export interface ActionCreator<T, U> {
   (args: T): Action<U>
   readonly type: ActionType
 }
 
 /** Syntactic sugar for creating actions */
-export function createAction<T extends ActionType>(type: T): NoPayloadActionCreator
+export function createAction<T extends ActionType>(
+  type: T
+): NoPayloadActionCreator
 
 export function createAction<T extends ActionType, U, V>(
   type: T,
