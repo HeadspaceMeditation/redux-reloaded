@@ -15,11 +15,11 @@ describe('redux middleware', () => {
     SUBMIT_FORM,
   }
 
-  const submitForm = createAction(Actions.SUBMIT_FORM, (firstName: string) => {
-    firstName
-  })
+  const submitForm = createAction(Actions.SUBMIT_FORM, (firstName: string) => ({
+    firstName,
+  }))
 
-  it("should not blow up if an action does not have a handler registered", () => {
+  it('should not blow up if an action does not have a handler registered', () => {
     const handlers = createActionHandlers()
     const store = createStore(handlers)
     const action = submitForm('foo')

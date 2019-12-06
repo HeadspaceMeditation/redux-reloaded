@@ -12,17 +12,32 @@ export interface Action<P> {
 }
 
 /** A Redux action creattor - i.e. a function that returns an Action */
-export interface ActionCreator<P> {
-  (args: any): Action<P>
+export interface NoPayloadActionCreator {
+  (): Action<{}>
+  readonly type: ActionType
+}
+
+
+export interface ActionCreator<T, U> {
+  (args: T): Action<U>
   readonly type: ActionType
 }
 
 /** Syntactic sugar for creating actions */
-export function createAction<T extends ActionType, P>(
+export function createAction<T extends ActionType>(type: T): NoPayloadActionCreator
+
+export function createAction<T extends ActionType, U, V>(
   type: T,
-  payload: (args: any) => P
-): ActionCreator<P> {
-  const f = (args: any) => ({ type, payload: payload(args) })
-  f.type = type
-  return f
+  createPayload: (args: U) => V
+): ActionCreator<U, V>
+
+export function createAction<T extends ActionType, U, V>(
+  type: T,
+  createPayload?: (args: U) => V
+): ActionCreator<U, V> | NoPayloadActionCreator {
+  const createPayloadFunc =
+    createPayload !== undefined
+      ? (args: U) => ({ type, payload: createPayload(args) })
+      : () => ({ type, payload: {} })
+  return Object.assign(createPayloadFunc, { type })
 }
