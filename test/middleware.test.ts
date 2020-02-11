@@ -12,7 +12,7 @@ jest.useFakeTimers()
 
 describe('redux middleware', () => {
   enum Actions {
-    SUBMIT_FORM,
+    SUBMIT_FORM = "SUBMIT_FORM",
   }
 
   const submitForm = createAction(Actions.SUBMIT_FORM, (firstName: string) => ({

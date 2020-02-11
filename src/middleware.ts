@@ -26,8 +26,7 @@ function mergeActionHandlers<C, S>(
   const allHandlers: ActionHandlerSet<C, S> = {}
 
   handlers.forEach(group => {
-    Object.keys(group.handlers).forEach(actionTypeString => {
-      const actionType = parseInt(actionTypeString)
+    Object.keys(group.handlers).forEach(actionType => {
       const handler = group.handlers[actionType]
       const existingHandlers = allHandlers[actionType]
       if (existingHandlers) {
