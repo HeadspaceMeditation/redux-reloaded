@@ -16,7 +16,7 @@ import { createAction, createReducer } from "redux-reloaded"
 
 /** Define all your actions in an Enum  */
 export enum Actions {
-  SELECT_PATIENT
+  SELECT_PATIENT = "SELECT_PATIENT"
 }
 
 /**  Create what Redux calls an "Action Creator" - i.e. a function that returns an action  */
