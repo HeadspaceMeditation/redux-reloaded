@@ -12,12 +12,12 @@ export type ActionHandler<C, S, P> = (params: {
 }) => void
 
 export type ActionHandlerSet<C, S> = {
-  [key: number]: ActionHandler<C, S, any>[]
+  [key: string]: ActionHandler<C, S, any>[]
 }
 
 export class ActionHandlers<C, S> {
   public handlers: {
-    [key: number]: ActionHandler<C, S, any>
+    [key: string]: ActionHandler<C, S, any>
   } = {}
 
   on = <P>(

@@ -1,9 +1,9 @@
 /** Utils for creating type-safe Redux reducers and action creators  */
 
 /**  A Redux action's type. We assume all action types
- *   are expressed as Enums, hence the alias to number
+ *   are expressed as Enums, hence the alias to string
  */
-export type ActionType = number
+export type ActionType = string
 
 /** A Redux action */
 export interface Action<P> {

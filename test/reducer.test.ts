@@ -5,7 +5,7 @@ type State = {
 }
 
 const enum Actions {
-  SELECT,
+  SELECT = "SELECT",
 }
 
 const selectAction = createAction(Actions.SELECT, (id: string) => ({ id }))
