@@ -1,6 +1,6 @@
 # Redux Reloaded
 
-![advertisement](https://raw.githubusercontent.com/ginger-io/redux-reloaded/master/advertisement.jpg)
+![advertisement](https://raw.githubusercontent.com/HeadspaceMeditation/redux-reloaded/master/advertisement.jpg)
 
 ## What's this?
 
